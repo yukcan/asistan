@@ -4,7 +4,6 @@ from playsound import playsound
 import os
 import random
 import time
-from datetime import datetime
 import webbrowser
 import requests
 from bs4 import BeautifulSoup
@@ -70,25 +69,25 @@ def responce(voice):
         if today == "monday":
             today = "pazartesi"
         elif today == "tuesday":
-            today == "salı"
+            today = "salı"
         elif today == "wednesday":
-            today == "çarşamba"
+            today = "çarşamba"
         elif today == "thursday":
-            today == "perşembe"
+            today = "perşembe"
         elif today == "friday":
-            today == "cuma"
+            today = "cuma"
         elif today == "saturday":
-            today == "cumartesi"
+            today = "cumartesi"
         else:
-            today == "pazar"
-        speak("bugün"+today)
+            today = "pazar"
+        speak("bugün "+today)
     if "saat kaç" in voice:
         selection = ["şu anda saat","saat","hemen bakıyorum saat","eti kemik geçiyor"]
         selection = random.choice(selection)
         if selection == "eti kemik geçiyor":
             speak(selection)
         else:
-            clock = datetime.now().strftime("%H %M")
+            clock = time.strftime("%H %M")
             speak(selection + clock)
     if "google'da ara" in voice:
         selection = ["google'da ne aratmamı istersin","google'da ne aramak istiyorsun","lütfen aratmak istediğin şeyi söyle"]
